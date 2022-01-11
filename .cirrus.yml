@@ -43,7 +43,7 @@ task:
       - repo init -q --no-repo-verify --depth=1 -u https://github.com/Spark-Rom/manifest -b spark -g default,-device,-mips,-darwin,-notdefault
       - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
       # DT/VT/KT/TC
-      - git clone --depth=1 https://github.com/manojkrishkumar/device_xiaomi_laurel_sprout -b spark device/xiaomi/laurel_sprout
+      - git clone --depth=1 https://github.com/manojkrishkumar/device_xiaomi_laurel_sprout -b evo device/xiaomi/laurel_sprout
       - git clone --depth=1 https://github.com/magicxavi/android_vendor_xiaomi_laurel_sprout -b fw11 vendor/xiaomi/laurel_sprout
       - git clone --depth=1 https://github.com/magicxavi/android_kernel_xiaomi_laurel_sprout -b lineage-18.1 kernel/xiaomi/laurel_sprout
       - git clone --depth=1 https://github.com/manojkrishkumar/vendor_miuicamera -b R vendor/miuicamera
