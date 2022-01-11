@@ -41,7 +41,7 @@ task:
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Start sync Source"
       - cd /tmp/rom
       - repo init -q --no-repo-verify --depth=1 -u https://github.com/Evolution-X/manifest -b snow -g default,-device,-mips,-darwin,-notdefault
-      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j(nproc --all)
+      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
       # DT/VT/KT/TC
       - git clone --depth=1 https://github.com/manojkrishkumar/device_xiaomi_laurel_sprout -b evo device/xiaomi/laurel_sprout
       - git clone --depth=1 https://github.com/magicxavi/android_vendor_xiaomi_laurel_sprout -b fw11 vendor/xiaomi/laurel_sprout
