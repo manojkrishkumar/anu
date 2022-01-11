@@ -10,4 +10,5 @@ ccache -z
 
 . build/envsetup.sh
 lunch evolution_laurel_sprout-userdebug
+export ALLOW MISSING DEPENDENCIES=true
 mka evolution
