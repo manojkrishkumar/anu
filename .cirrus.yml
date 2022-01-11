@@ -24,7 +24,7 @@ task:
        - git config --global user.name "manojkrishkumar"
        - git config --global user.email "manojv970@gmail.com"
        - mkdir -p /tmp/ccache
-       - rclone copy remote:ccache/ci2/ccache.tar.gz /tmp -P
+       #- rclone copy remote:ccache/ci2/ccache.tar.gz /tmp -P
        - cd /tmp
        - time tar xf ccache.tar.gz
        - cd /tmp
@@ -41,7 +41,7 @@ task:
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Start sync Source"
       - cd /tmp/rom
       - repo init -q --no-repo-verify --depth=1 -u https://github.com/Evolution-X/manifest -b snow -g default,-device,-mips,-darwin,-notdefault
-      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j(nproc --all)
       # DT/VT/KT/TC
       - git clone --depth=1 https://github.com/manojkrishkumar/device_xiaomi_laurel_sprout -b evo device/xiaomi/laurel_sprout
       - git clone --depth=1 https://github.com/magicxavi/android_vendor_xiaomi_laurel_sprout -b fw11 vendor/xiaomi/laurel_sprout
@@ -57,8 +57,8 @@ task:
       - echo "Starting the Build..."
       - echo "============================"
 #      - ./collect.sh
-      - ./final.sh
-      - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Build $(cd /tmp/rom/out/target/product/juice/ && ls Nusantara*.zip) Completed!"
+      - bash final.sh
+      - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Build $(cd /tmp/rom/out/target/product/juice/ && ls *.zip) Completed!"
       - echo "============================"
       - echo "Build Completed!"
       - echo "============================"
@@ -74,7 +74,7 @@ task:
       - ./ziping.sh
       - cd /tmp
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Uploading ccache...."
-      - rclone copy ccache.tar.gz inok:nusantara -P
+      #- rclone copy ccache.tar.gz remote:sweet -P
       - echo " "
       - echo "============================"
       - echo "Build Uploaded Successfully!"
