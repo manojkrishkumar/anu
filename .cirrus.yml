@@ -46,6 +46,7 @@ task:
       - git clone --depth=1 https://github.com/manojkrishkumar/device_xiaomi_laurel_sprout -b spark device/xiaomi/laurel_sprout
       - git clone --depth=1 https://github.com/magicxavi/android_vendor_xiaomi_laurel_sprout -b fw11 vendor/xiaomi/laurel_sprout
       - git clone --depth=1 https://github.com/magicxavi/android_kernel_xiaomi_laurel_sprout -b lineage-18.1 kernel/xiaomi/laurel_sprout
+      - git clone --depth=1 https://github.com/manojkrishkumar/vendor_miuicamera -b R vendor/miuicamera
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Sync Completed!"
       - echo "============================"
       - echo "Sync Completed!"
