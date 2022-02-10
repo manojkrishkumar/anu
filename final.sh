@@ -9,5 +9,5 @@ ccache -o compression=true
 ccache -z
 
 . build/envsetup.sh
-lunch spark_laurel_sprout-userdebug
-mka bacon -j8
+lunch evolution_laurel_sprout-userdebug
+mka evolution -j8
